@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"file-service/controllers"
+	"github.com/leonardoavalerio/api-files/controllers"
 )
 
 func main() {

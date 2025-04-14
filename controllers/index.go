@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
-	"file-service/controllers/files"
+	"github.com/leonardoavalerio/api-files/controllers/files"
 )
 
 func InitRoutes(r *gin.Engine) {

@@ -3,7 +3,7 @@ package database;
 import (
 	"gorm.io/driver/postgres"
   	"gorm.io/gorm"
-	"file-service/model"
+	"github.com/leonardoavalerio/api-files/model"
 )
 
 func initDatabase() *gorm.DB {

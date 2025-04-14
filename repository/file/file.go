@@ -1,9 +1,9 @@
 package fileRepository
 
 import (
-	"file-service/model"
+	"github.com/leonardoavalerio/api-files/model"
 	"github.com/google/uuid"
-	"file-service/database"
+	"github.com/leonardoavalerio/api-files/database"
 )
 
 func Create(file model.File) model.File {

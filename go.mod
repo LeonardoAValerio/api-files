@@ -1,4 +1,4 @@
-module file-service
+module github.com/leonardoavalerio/api-files
 
 go 1.24.2
 

@@ -2,8 +2,8 @@ package filesController
 
 import (
 	"github.com/gin-gonic/gin"
-	"file-service/repository/file"
-	"file-service/model"
+	"github.com/leonardoavalerio/api-files/repository/file"
+	"github.com/leonardoavalerio/api-files/model"
 	"path/filepath"
 	"fmt"
 	"net/http"
