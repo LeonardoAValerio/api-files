@@ -1,9 +1,14 @@
-package Model
+package model
+
+import (
+	"time"
+	"github.com/google/uuid"
+)
 
 type File struct {
-	ID        uint
+	ID        uuid.UUID
 	Filename  string
-	MimeType  string 
+	Type	  string 
 	Size      int64
 	CreatedAt time.Time
 }
