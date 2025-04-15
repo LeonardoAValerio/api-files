@@ -1,13 +1,14 @@
 package filesController
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/leonardoavalerio/api-files/repository/file"
-	"github.com/leonardoavalerio/api-files/model"
 	"path/filepath"
 	"fmt"
 	"net/http"
 	"os"
+
+	"github.com/gin-gonic/gin"
+	"github.com/leonardoavalerio/api-files/internal/repository/file"
+	"github.com/leonardoavalerio/api-files/internal/model"
 )
 
 func InitRoutes(r *gin.Engine) {
@@ -45,6 +46,12 @@ func InitRoutes(r *gin.Engine) {
 		id := c.Param("id");
 
 		file := fileRepository.FindById(id);
+
+		if file = nil {
+			c.JSON(400, gin.H{"message": "Arquivo não encontrado"});
+			return
+		}
+
 		filePath := fmt.Sprintf("./uploads/%s.%s", file.ID, file.Type);
 
 		c.File(filePath);
@@ -57,7 +64,7 @@ func InitRoutes(r *gin.Engine) {
 		filePath := fmt.Sprintf("./uploads/%s.%s", file.ID, file.Type);
 
 		if err := os.Remove(filePath); err != nil {
-			c.JSON(500, gin.H{"error": "Erro ao deletar o arquivo"})
+			c.JSON(500, gin.H{"error": "Erro ao deletar o arquivo"});
 			return
 		}
 
